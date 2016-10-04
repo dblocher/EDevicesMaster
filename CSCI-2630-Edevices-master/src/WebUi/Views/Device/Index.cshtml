@@ -1,9 +1,24 @@
 ﻿@model EDeviceClaims.WebUi.Models.DeviceListViewModel
 
-
+<style>
+    ul {
+    font-size:15px;
+    color: white;
+    padding: 10px 5px;   /*gives the padding size to the black navigation boxes(first number top/bottom second is left/right)*/
+    text-decoration: none;
+    border: 1px solid black;
+    list-style-type:decimal;
+    background: -webkit-linear-gradient(blue, black); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(blue, black); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(blue, black); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(blue, black); /* Standard syntax (must be last) */
+    text-shadow: 3px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
+    }
+</style>
 <ul>
   @foreach (var thing in Model)
   {
-    <li>@thing.Name -> @thing.SerialNumber</li>
+    
+    <li>@thing.Name -> @thing.SerialNumber<br /></li>
   }
 </ul>
