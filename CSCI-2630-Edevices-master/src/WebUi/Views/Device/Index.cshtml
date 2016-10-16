@@ -1,24 +1,20 @@
 ﻿@model EDeviceClaims.WebUi.Models.DeviceListViewModel
-
-<style>
-    ul {
-    font-size:15px;
-    color: white;
-    padding: 10px 5px;   /*gives the padding size to the black navigation boxes(first number top/bottom second is left/right)*/
-    text-decoration: none;
-    border: 1px solid black;
-    list-style-type:decimal;
-    background: -webkit-linear-gradient(blue, black); /* For Safari 5.1 to 6.0 */
-    background: -o-linear-gradient(blue, black); /* For Opera 11.1 to 12.0 */
-    background: -moz-linear-gradient(blue, black); /* For Firefox 3.6 to 15 */
-    background: linear-gradient(blue, black); /* Standard syntax (must be last) */
-    text-shadow: 3px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
+@{
+    ViewBag.Title = "Device";
+}
+<h2>@ViewBag.Title.</h2>
+<h3>Devices covered by your policy.</h3>
+<hr />
+<table>
+    <tr>
+        <td style="width:200px; color:#616fe0"><strong>Device</strong></td>
+        <td style="width:200px; color:#616fe0"><strong>Serial Number</strong></td>
+    </tr>
+    @foreach (var thing in Model)
+    {
+        <tr>
+            <td style="width:200px">&#8226;&nbsp;@thing.Name</td>
+            <td style="width:200px">@thing.SerialNumber</td>
+        </tr>
     }
-</style>
-<ul>
-  @foreach (var thing in Model)
-  {
-    
-    <li>@thing.Name -> @thing.SerialNumber<br /></li>
-  }
-</ul>
+</table>
