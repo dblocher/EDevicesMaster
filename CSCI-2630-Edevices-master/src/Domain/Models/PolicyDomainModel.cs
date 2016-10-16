@@ -9,7 +9,6 @@ namespace EDeviceClaims.Domain.Models
 {
   public class PolicyDomainModel
   {
-
     public PolicyDomainModel(Policy policyEntity)
     {
       Id = policyEntity.Id;
@@ -18,12 +17,9 @@ namespace EDeviceClaims.Domain.Models
       DeviceName = policyEntity.DeviceName;
     }
 
-    public Guid Id { get; set; }
-
+    public Guid Id { get; set; }//properties of the device(phone/tablet)
     public string Number { get; set; }
-
     public string DeviceName { get; set; }
-
     public string SerialNumber { get; set; }
   }
 }
