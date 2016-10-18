@@ -19,3 +19,4 @@ namespace EDeviceClaims.Entities
     public virtual List<ClaimEntity> Claims { get; set; }
     }
 }
+
