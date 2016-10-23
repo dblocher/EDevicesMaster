@@ -1,31 +1,64 @@
-﻿@{
+﻿@using System.Activities.Expressions
+@{
     ViewBag.Title = "Home Page";
 }
+<br />
+<hr />
+<div class="welcome">
+    <h1>CSCC Online EDevice Claims Center</h1>
+    @if (!Request.IsAuthenticated)
+    {
+        <p class="lead">Please log in to access the claims system.</p>
+    }
+    else
+    {
+        <p class="lead">Welcome to EDevice claims online.</p>
+    }
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="http://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
 </div>
-
+<hr />
+<div class="row">
+    <div class="col-lg-4" align="center">
+        <br/>
+        <hr/>
+        <h2>All your gadgets covered. Safe and sounds from lifes little moments.</h2>
+        <hr/>
+    </div>
+    <div class="col-lg-8" align="center">
+        <img src="~/Content/Images/iPhoneHome.png" />
+    </div>
+</div>
+<hr/>
 <div class="row">
     <div class="col-md-4">
-        <h2>Getting started</h2>
+        <h2>CSCC</h2>
         <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
+            CSCC EDevice Claims Center is developed by the MVC 5 C# team at Columbus State.
+            Click below for more information about Columbus State.
         </p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+        <p><a class="btn btn-info" href="http://cscc.edu">Learn more</a></p>
     </div>
     <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+        @if (!Request.IsAuthenticated)
+        {
+            <h2>Login</h2>
+            <p>Please Login into start a new claim or to check the status of an existing claim.</p>
+            <p>
+                @Html.ActionLink("Log in", "Login", "Account", new { @id = "loginLink" }, new {@class="btn btn-info"})
+            </p>
+        }
+        else
+        {
+            <h2>Claims</h2>
+            <p>Click below to start a new claim or check an existing claim on your covered device.</p>
+            <p>
+                @Html.ActionLink("My Devices", "Index", "Device", new {@id = "myDevice"}, new {@class="btn btn-info"})
+            </p>
+        }
     </div>
     <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+        <h2>Eligilbe Devices</h2>
+        <p>You can easily find what devices are eligilbe for coverage under CSCC EDevice Policy.</p>
+        <p><a class="btn btn-info" href="">Coverage</a></p>
     </div>
 </div>

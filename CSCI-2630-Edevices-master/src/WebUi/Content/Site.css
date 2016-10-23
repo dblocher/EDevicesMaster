@@ -1,12 +1,28 @@
-﻿body {
+﻿
+body {
     padding-top: 50px;
-    padding-bottom: 20px;
+    /*padding-bottom: 20px;*/
+    background-image: url('Images/Lobby.jpg');
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size:cover;
 }
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
+    margin-left: 15%;
+    margin-right: 15%;
     padding-left: 15px;
     padding-right: 15px;
+    background-color: white;
+}
+
+.welcome {
+    border-radius: 25px;
+    background: #660033;
+    padding: 25px; 
+    font-size: 20px;
+    color: white;
 }
 
 /* Override the default bootstrap behavior where horizontal description lists 
