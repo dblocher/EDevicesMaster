@@ -12,6 +12,6 @@ namespace EDeviceClaims.Entities
         public string UserId { get; set; }
         public virtual AuthorizedUser User { get; set; }
         public Guid PolicyId { get; set; }
-        public virtual Policy Policy { get; set; }
+        public virtual PolicyEntity Policy { get; set; }
     }
 }
